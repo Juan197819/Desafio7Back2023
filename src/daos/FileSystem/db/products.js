@@ -1,0 +1,53 @@
+let productosLista = [
+    {
+      title: "Escuadra",
+      description: "Producto Argentino, medidas 25x15cm, material de plastico duro",
+      status: true,
+      stock: 4,
+      category:'libreria',
+      code: "ESC010",
+      thumbnail:["https://cdn3.iconfinder.com/data/icons/education-209/64/ruler-triangle-stationary-school-256.png"],
+      price: 123.45,
+    },
+    {
+      title: "Calculadora",
+      description:"Calculadora Cientifica marca Maxwell con 417 funciones y menu de funciones amigable",
+      status: true,
+      stock: 8,
+      category:'libreria',
+      code: "CAL015",
+      thumbnail:["https://cdn3.iconfinder.com/data/icons/education-209/64/calculator-math-tool-school-256.png"],
+      price: 234.56,
+    },
+    {
+      title: "Globo Terraqueo",
+      description: "Globo Terraqueo 30cm Ø Con Base Plastico Politico 307w",
+      status: true,
+      stock: 12,
+      category:'libreria',
+      code: "GLT002",
+      thumbnail:["https://cdn3.iconfinder.com/data/icons/education-209/64/globe-earth-geograhy-planet-school-256.png"],
+      price: 345.67,
+    },
+    {
+        title:'JUGO',
+        description:'El mas refrescante',
+        status: true,
+        stock: 10,
+        category:'Bebidas',
+        code:'BEB012',
+        thumbnail:['https://d1on8qs0xdu5jz.cloudfront.net/webapp/images/productos/b/0000004000/4236.jpg'],
+        price:2350, 
+    },
+    {
+        title:'AGUA',
+        description:'La mas TRANSPARENTE',
+        code:'BEB067',
+        status: true,
+        price:110, 
+        category:'Bebidas',
+        thumbnail:['https://d1on8qs0xdu5jzb/0000004000/4236.jpg'],
+        stock: 15,
+    }
+]
+export default productosLista

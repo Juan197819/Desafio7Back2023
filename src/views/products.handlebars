@@ -1,0 +1,18 @@
+<h1>Productos</h1>
+<div class="flexRow listaProductos">
+    {{#each products}}
+        <div class="cardProduct">
+            <p class="nombreProducto">{{this.title}}</p>
+            <div>
+                <img class='fotoProductos' src='{{this.thumbnail}}' alt='{{this.title}}'></img>
+            </div>
+            <p class="precio">Precio: ${{this.price}}</p>
+            <p class="envio">Envio Gratis</p>
+            <p class="stock">Stock: {{this.stock}}</p>
+            <button class="botonAgregarCarrito" onclick='return agregarAlCarrito("{{this.id}}")' >Agregar al carrito</button>
+        </div>
+    {{/each}}
+</div>
+<a href="{{prevLink}}">Anterior</a>
+<a href="{{nextLink}}">Siguiente</a>
+<script src="../js/index.js"></script>

@@ -1,0 +1,47 @@
+.cardProduct{
+    gap:8px;
+    width: 150px ;
+    height: 50vh;
+    justify-content: space-between;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    background-color: whitesmoke;
+    border: solid 1px black;
+    padding: 10px;
+    margin: 20px ;
+    box-shadow: 3px 3px 3px rgba(3, 3, 3, 0.502) ;
+    font-size: 12px;
+    font-weight: bolder;
+}
+.cardProduct p{
+
+    text-align: center;
+}
+.cardProduct div{
+height: 80px;}
+.fotoProductos{
+    display: block;
+    max-height: 100% ;
+}
+.precio{
+    height: auto;
+    font-size: 15px;
+}
+.nombreProducto{
+    line-height: 15px;
+    font-size: 20px;
+    margin:15px;
+    font-family: 'Hind Vadodara', sans-serif;
+    text-align: center;
+    font-weight: bolder;
+    color:#2b2b2b
+}
+
+
+.trCart{
+    height: 50px;
+}
+.botonAgregarCarrito:hover {
+    background-color: aqua;
+}

@@ -1,0 +1,34 @@
+<h1>Productos de tu carrito</h1>
+<table class=''>
+    <thead>
+        <tr>
+            <th>Producto</th>
+            <th>Descripcion</th>
+            <th>Precio</th>
+            <th>Cantidad</th>
+            <th>Categoria</th>
+            {{!-- <th colSpan="2">Subtotal</th> --}}
+        </tr>
+    </thead>
+    <tbody>
+        {{#each newMap}}
+        <tr >
+            <td class='trCart'>
+                <img class='fotoProductos' src='{{this.thumbnail}}' alt='{{this.title}}'></img>
+            </td>
+            <td>{{this.title}}</td>
+            <td>{{this.description}}</td>
+            <td>{{this.price}}</td>
+            <td>{{this.quantity}}</td>
+            <td>{{this.category}}</td>
+        </tr>
+        {{/each}}
+    </tbody>
+    {{!-- <tfoot>
+    <tr>
+        <th colSpan="6">
+        <span className='total' id='valorCarritoTotal'>Total valor del carrito ${valorCarrito.toFixed(2)}</span>
+        </th>
+    </tr>
+    </tfoot> --}}
+</table>
