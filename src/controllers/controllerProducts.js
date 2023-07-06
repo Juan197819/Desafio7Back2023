@@ -14,9 +14,7 @@ class ControllerProducts {
     async controllerGetProducts (req, res, next){
         try {
             const {limit, page, sort, ...query} = req.query
-            console.log('query', query)
             const productos = await serviceProducts.serviceGetProducts(limit, page, sort, query)
-            console.log(productos);
             res.status(200).json(productos)
         } catch (error) {
             next(error)

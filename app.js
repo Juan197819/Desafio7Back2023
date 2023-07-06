@@ -31,8 +31,11 @@ app.use(session({
     store: new MongoStore({
         mongoUrl,
         mongoOptions:{useNewUrlParser:true, useUnifiedTopology:true},
-        //ttl:5
-    })
+    }),
+    rolling:true,
+    cookie:{
+        maxAge: 10000
+    }
 }))
 
 app.use('/api/products', routerProducts)
@@ -48,5 +51,3 @@ const server = app.listen(PORT,()=>{
 }).on('error',err=>console.log('Fallo el servidor',err))
 
 export const io = new Server(server)
-
-

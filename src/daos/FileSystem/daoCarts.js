@@ -20,9 +20,7 @@ class DaoCarts {
     async #getCartById(id){
         try {
             let carts = await this.#getCarts() // return =>[{...}] || []
-            console.log('carts', carts)
             let cart = carts.find(c=>c.id==id) // return {...} || undefined
-            console.log('cart', cart)
             if (!cart) throw new Error('Nonexistent cart!')
             return cart
         } catch (error) {
@@ -38,7 +36,6 @@ class DaoCarts {
             arrayCart.push(newCart)
 
             await fs.promises.writeFile(this.pathCarts, JSON.stringify(arrayCart))
-            console.log(arrayCart)
             return newCart            
         } catch (error) {
             throw (error)   

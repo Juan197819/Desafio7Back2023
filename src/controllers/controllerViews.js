@@ -25,7 +25,6 @@ class ControllerViews{
             const response = await serviceProducts.serviceGetProducts(limit, page, sort, query)
             const products = dtoViews(response)
             const user = req.session.user
-            console.log('user', user)
             res.status(200).render('home',{products,...user})
         } catch (error) { 
             next(error)
@@ -40,7 +39,6 @@ class ControllerViews{
                 socket.emit('messageServer', dtoViews(response))
                 
                 socket.on('messageClient', async product=>{
-                    console.log('pro', product)
                     await serviceProducts.serviceAddProduct(product)
                     const response = await serviceProducts.serviceGetProducts(limit, page, sort, query)
                     io.emit('messageServer', dtoViews(response))
@@ -53,12 +51,9 @@ class ControllerViews{
     }
     async controllerProducts(req, res, next){
         const {limit, page, sort, ...query} = req.query
-        console.log(req.url)
         try {
             const response = await serviceProducts.serviceGetProducts(limit, page, sort, query)
             const products = dtoViews(response)
-            console.log(1,products)
-            console.log(2,response)
             res.status(200).render('products',{products, ...response})
         } catch (error) { 
             next(error)
@@ -74,8 +69,6 @@ class ControllerViews{
                     ...p.product._doc,quantity:p.quantity
                 }
             })
-            console.log(1,products)
-            console.log(2,newMap)
             res.status(200).render('cart',{newMap})
         } catch (error) { 
             next(error)

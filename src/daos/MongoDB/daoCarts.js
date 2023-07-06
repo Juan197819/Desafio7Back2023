@@ -14,7 +14,6 @@ class DaoCarts {
     async addCart(){
         try {
             const newCart = await ModelCarts.create({})
-            console.log(newCart)
             return newCart            
         } catch (error) {
             throw (error)   
@@ -34,18 +33,14 @@ class DaoCarts {
         try {
             const cart = await this.#getCartById(cid)
             let index = cart.products.findIndex(p=>p.product==pid)
-            console.log(index)
             if (index!=-1) {
                 cart.products[index].quantity +=1 
-                console.log('cart if')
             } else {
-                console.log('cart else')
                 cart.products.push({
                     product:pid,
                     quantity:1
                 })                
             }
-            console.log('cart', cart)
             await cart.save()
             return cart
         } catch (error) {
@@ -69,7 +64,6 @@ class DaoCarts {
         try {
             const cart = await this.#getCartById(cid)
             const updateCart = await ModelCarts.updateOne({_id:cid}, {$set: {products:newCart}})
-            console.log(updateCart)
             return 'The cart updated correctly!!'
         } catch (error) {
             throw (error)   

@@ -58,7 +58,7 @@ button{
     border: 1px solid black;
 }
 p{
-    line-height: 15px;
+    line-height: 25px;
     font-size: 20px;
     margin:15px;
     font-family: 'Hind Vadodara', sans-serif;
@@ -66,7 +66,6 @@ p{
 }
 a:not(p a){
     display: inline-block;
-    font-size: 25px;
     font-weight: bold;
     border:#2b2b2b solid 1px;
     margin:5px;
@@ -108,8 +107,7 @@ a{
     text-align: center;
 }
 header{
-    width: 100vw;
-    margin: 10px;
+    width: 100%;
     background-color: rgb(154, 148, 144);
     justify-content: space-evenly;
     align-items: center;

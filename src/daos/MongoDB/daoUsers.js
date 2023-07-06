@@ -4,13 +4,10 @@ class DaoUsers {
     async addUser(user){
         try {
             const userExist = await this.getUserByEmail(user.email)
-            console.log('userExist', userExist.length)
             if (!userExist.length) {
-                console.log('entre')
                 if(user.email=='adminCoder@coder.com' &&user.password=='adminCod3r123') user.role='admin'
                 return await ModelUsers.create(user)
             }else{
-                console.log('no entre')
                 return null
             }
         } catch (error) {

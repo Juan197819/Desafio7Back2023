@@ -21,7 +21,6 @@ form.addEventListener('submit',(e)=>{
     socket.emit('messageClient',newProduct)
 })
 socket.on('messageServer',data=>{
-    console.log('data', data)
     const i = data.map(p=>{
         return ( `<tr class='trCart'>
         <td>${p.title}</td>
@@ -52,13 +51,11 @@ async function agregarAlCarrito(pid) {
        localStorage.setItem('idCart', idCart)
        alert ('Carrito creado ok')
    }
-    console.log(idCart)
    //SE AGREGA PRODUCTO
     let prod = await fetch(`/api/carts/${idCart}/product/${pid}`,{
         method: 'POST'
       })
       prod = await prod.json()
-      console.log(prod)
       alert('producto agregado!!')
 }
 async function goToCart(params) {
